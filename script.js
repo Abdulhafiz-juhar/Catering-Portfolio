@@ -51,6 +51,7 @@ const options = document.querySelectorAll(".option");
 
 // Get the business-left element
 let businessLeftDiv = document.querySelector(".option1");
+let businessLeftDivIcon = document.querySelector(".option1 img");
 // Create the arrow element
 let arrowElement = document.createElement("div");
 arrowElement.classList.add("arrow");
@@ -73,12 +74,15 @@ arrowElement.style.borderColor = "white transparent transparent transparent";
 businessLeftDiv.appendChild(arrowElement);
 businessLeftDiv.style.fontWeight = "bold";
 businessLeftDiv.style.color = "white";
+businessLeftDivIcon.style.filter =
+  "invert(100%) sepia(0%) saturate(1%) hue-rotate(67deg) brightness(107%) contrast(102%)";
 options.forEach((option) => {
   option.addEventListener("click", () => {
     console.log(`Clicked: ${option.classList[1]}`);
     // Clear the styling applied before to the old selected option
     businessLeftDiv.style.fontWeight = "";
     businessLeftDiv.style.color = "";
+    businessLeftDivIcon.style.filter = "";
     // Add your code here for what should happen on click
     // Add classes and other properties
 
@@ -90,10 +94,13 @@ options.forEach((option) => {
 
     //Make arrow apear and text bold on the currently clicked option
     businessLeftDiv = document.querySelector(`.${option.classList[1]}`);
+    businessLeftDivIcon = document.querySelector(`.${option.classList[1]} img`);
     businessLeftDiv.appendChild(arrowElement);
     businessLeftDiv.style.fontWeight = "bold";
     businessLeftDiv.style.color = "white";
     headerDiv.textContent = `${option.children[1].textContent}`;
+    businessLeftDivIcon.style.filter =
+      "invert(100%) sepia(0%) saturate(1%) hue-rotate(67deg) brightness(107%) contrast(102%)";
   });
 });
 
