@@ -105,6 +105,3 @@ options.forEach((option) => {
 });
 
 // sections end
-
-// make the page content change based on clicked option
-// maybe using classname.itscontent kinda thing
