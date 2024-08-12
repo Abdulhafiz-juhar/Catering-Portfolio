@@ -19,8 +19,7 @@
   grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
   background-color: #31de79;
   align-items: start;
-  padding: 2rem 0;
-  /* make them align at the start not fill the whole thing */
+  padding: 6rem 0;
 }
 
 .business-left > div {
