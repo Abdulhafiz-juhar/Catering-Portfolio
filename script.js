@@ -54,8 +54,14 @@ options.forEach((option) => {
   option.addEventListener("click", () => {
     console.log(`Clicked: ${option.classList[1]}`);
     // Add your code here for what should happen on click
-    businessRight.style.transition = "all 0.5s ease";
     // Add classes and other properties
+
+    // transition method to make texts apear slower
+    headerDiv.style.opacity = "0";
+    setTimeout(() => {
+      headerDiv.style.opacity = "1";
+    }, 200);
+
     headerDiv.textContent = `${option.children[1].textContent}`;
   });
 });
