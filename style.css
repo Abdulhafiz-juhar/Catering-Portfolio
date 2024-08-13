@@ -162,18 +162,9 @@
   color: #31de79;
 }
 
-.Services2 .right {
+.row .right {
   display: grid;
   gap: 0.1rem;
 }
 
-.right > div {
-  display: grid;
-  gap: 0.3rem;
-  padding-left: 2rem;
-}
-
-.right > div > h2 {
-  /* div it up to arrow, texts, empty box part mnamn */
-}
 /* services2 end */
