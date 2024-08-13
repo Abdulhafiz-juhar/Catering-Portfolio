@@ -105,3 +105,21 @@ options.forEach((option) => {
 });
 
 // sections end
+
+// section2
+const section2Right = document.querySelectorAll(".right");
+
+section2Right.forEach((element) => {
+  const section2ArrowIn = element.children[0];
+  const section2ArrowOut = element.children[1];
+  element.addEventListener("mouseenter", () => {
+    section2ArrowIn.classList.add("injs");
+    section2ArrowOut.classList.remove("out");
+  });
+  element.addEventListener("mouseleave", () => {
+    section2ArrowIn.classList.remove("injs");
+    section2ArrowOut.classList.add("out");
+  });
+});
+console.log(section2Right);
+// section2 end
