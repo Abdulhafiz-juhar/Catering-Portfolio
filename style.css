@@ -4,6 +4,72 @@
   margin: 0;
   padding: 0;
 }
+/*navbar*/
+.Navbar{
+  position: fixed;
+  width: 100%;
+  padding: 20px 200px;
+  max-height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-list{
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+.nav-items{
+  margin: 0 10px;
+}
+.nav-items a{
+  text-decoration: none;
+  position: relative;
+  font-size: 25px;
+  color: black;
+}
+.nav-items a:after{
+  content: "";
+  position: absolute;
+  background-color: #31de79;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+.nav-items a:hover:after{
+  width: 100%;
+}
+.nav-items a:active{
+  content: "";
+  position: absolute;
+  background-color: #31de79;
+  height: 3px;
+  width: 100%;
+  left: 0;
+  bottom: -10px;
+}
+
+/*Home*/
+.Home{
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+}
+.left{
+margin: auto auto;
+}
+.right img{
+  background-size: cover;
+  max-width: 900px;
+  min-height: 100%;
+}
+
+
+
+
 /* services */
 .Services {
   height: 100vh;
