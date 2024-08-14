@@ -181,4 +181,85 @@
 }
 
 /* services2 end */
-/* add arrow mnamn stemeles */
+
+/* Project */
+.Project {
+  display: grid;
+  justify-items: center;
+  grid-template-rows: auto 1fr 1fr 9fr;
+  padding: 2rem;
+  gap: 1.5rem;
+  background-color: #f8f9fa;
+  height: 100vh;
+  align-items: center;
+}
+
+.Project .smallHeader {
+  color: #31de79;
+}
+
+.Project .bigHeader {
+  font-size: 2.5rem;
+}
+
+.Project .galleryDescription {
+  color: #999999;
+}
+
+.Project .galleryContainer {
+  display: grid;
+  grid-template-columns: 11% 78% 11%;
+  width: 100%;
+  /* height: 18rem; */
+}
+
+.galleryContainer .gallery {
+  /* width: 100%; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.gallery .card {
+  background-image: url(images/bg_3.jpg);
+  background-size: 100% 100%;
+  background-position: center;
+  height: 50vh;
+
+  display: grid;
+  align-content: end;
+  transition: all 0.5s ease;
+}
+
+.gallery .card:hover {
+  background-size: 120% 120%;
+}
+
+.card .cardContent {
+  padding: 1rem;
+  display: grid;
+  gap: 0.5rem;
+  color: white;
+  background-color: #31de79;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.card:hover .cardContent {
+  opacity: 1;
+}
+.cardContent h3 {
+  font-weight: 600;
+}
+
+.cardContent span {
+  font-weight: 500;
+  font-size: small;
+}
+
+.galleryContainer .arrow {
+  display: grid;
+  place-items: center;
+}
+/* Project end */
+
+/* make the background image zoomin on hover */
