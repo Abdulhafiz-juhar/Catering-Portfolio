@@ -13,6 +13,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  z-index: 2;
 }
 .nav-list{
   display: flex;
@@ -20,12 +22,12 @@
   list-style: none;
 }
 .nav-items{
-  margin: 0 10px;
+  margin: 0 26px;
 }
 .nav-items a{
   text-decoration: none;
   position: relative;
-  font-size: 25px;
+  font-size: 18px;
   color: black;
 }
 .nav-items a:after{
@@ -50,22 +52,66 @@
   left: 0;
   bottom: -10px;
 }
+/*navbar end/
 
 /*Home*/
 .Home{
+  position: relative;
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  
+  font-family: Arial, Helvetica, sans-serif;
 }
 .left{
 margin: auto auto;
+margin-left: 200px;
+margin-right: 20px;
+}
+.left h6{
+  position: absolute;
+  font-size: 15px;
+  letter-spacing: 10px;
+  transform: rotateZ(270deg);
+  left: -40px;
+  top: 50vh;
+  text-transform: uppercase;
+  opacity: 0.1;
+}
+.left h5{
+  letter-spacing: 2px;
+  font-weight: lighter;
+  color: #31de79;
+  text-transform: uppercase;
+}
+.left h1{
+  font-size: 45px;
+  font-weight: lighter;
+}
+.left h1 span{
+  font-weight: 900;
+}
+.left p{
+  margin: 20px 0 50px 0;
+  font-size: 20px;
+  line-height: 2rem;
+  opacity: 0.7;
+}
+.left a{
+  text-decoration: none;
+  margin: 20px 0;
+  padding: 20px 50px;
+  border: 1px solid #31de79;
+  background: linear-gradient(135deg, #91f36b 10%,#31de79 100%);
+  color: #fff;
+  border-radius: 30px;
 }
 .right img{
   background-size: cover;
-  max-width: 900px;
+  max-width: 780px;
   min-height: 100%;
+  overflow: hidden;
 }
+/*Home end/
 
 
 
@@ -248,3 +294,25 @@ margin: auto auto;
 
 /* services2 end */
 /* add arrow mnamn stemeles */
+
+
+/*Testimony*/
+.Testimony{
+  min-height: 100vh;
+  background-color: #31de79;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 5rem;
+}
+.Testimony h1{
+  color: #fff;
+  text-align: center;
+  padding-top: 100px;
+  font-size: 40px;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+.testimonies{
+  border: 1px solid red;
+  margin-top: 20px;
+  min-height: 80vh;
+}
