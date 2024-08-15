@@ -220,10 +220,18 @@
   gap: 1rem;
 }
 
+.galleryContainer .arrow {
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
 .gallery .card {
-  background-image: url(images/bg_3.jpg);
+  /* background-image: url(images/bg_3.jpg); */
   background-size: 100% 100%;
   background-position: center;
+  background-color: gray;
   height: 50vh;
 
   display: grid;
@@ -256,10 +264,11 @@
   font-size: small;
 }
 
-.galleryContainer .arrow {
-  display: grid;
-  place-items: center;
+/* for animation */
+.gallery .card:not(.active) {
+  display: none;
 }
+/* for animation end */
 /* Project end */
 
-/* make the background image zoomin on hover */
+/* continue with making the js animation stuff */

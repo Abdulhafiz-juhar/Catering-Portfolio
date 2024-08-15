@@ -123,3 +123,23 @@ section2Right.forEach((element) => {
 });
 console.log(section2Right);
 // section2 end
+
+//project
+const galleryCard = document.querySelectorAll(".gallery .card");
+const galleryContainerLeftArrow = document.querySelectorAll(
+  ".galleryContainer .letfArrow"
+);
+const galleryContainerRightArrow = document.querySelectorAll(
+  ".galleryContainer .rightArrow"
+);
+
+let currentSlide = 0;
+let autoSlideInterval;
+
+function showSlide(index) {
+  galleryCard.forEach((card, i) => {
+    card.classList.toggle("active", i === index);
+  });
+}
+
+//project end
