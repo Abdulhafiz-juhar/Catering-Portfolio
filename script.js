@@ -124,22 +124,188 @@ section2Right.forEach((element) => {
 console.log(section2Right);
 // section2 end
 
-//project
-const galleryCard = document.querySelectorAll(".gallery .card");
-const galleryContainerLeftArrow = document.querySelectorAll(
-  ".galleryContainer .letfArrow"
-);
-const galleryContainerRightArrow = document.querySelectorAll(
-  ".galleryContainer .rightArrow"
-);
+// //project
+// let currentIndex = 0;
+// let autoSlideInterval;
 
-let currentSlide = 0;
-let autoSlideInterval;
+// const carouselItems = document.querySelectorAll('.card'); // Assuming you have a class 'card' for your carousel items
+// const galleryContainerLeftArrow = document.querySelector('.leftArrow');
+// const galleryContainerRightArrow = document.querySelector('.rightArrow');
 
-function showSlide(index) {
-  galleryCard.forEach((card, i) => {
-    card.classList.toggle("active", i === index);
+// function showSlide(index, index2, index3) {
+//   for (let i = 0; i < carouselItems.length; i++) {
+//     if (i === index || i === index2 || i === index3) {
+//       carouselItems[i].classList.add("active");
+//       carouselItems[i].style.backgroundImage = `url(images/p${i + 1}.jpg)`;
+//     } else {
+//       carouselItems[i].classList.remove("active");
+//     }
+//   }
+// }
+
+// function prevSlide() {
+//   clearInterval(autoSlideInterval);
+//   currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+//   showSlide(currentIndex, (currentIndex - 1 + carouselItems.length) % carouselItems.length, (currentIndex - 2 + carouselItems.length) % carouselItems.length);
+//   startAutoSlide();
+// }
+
+// function nextSlide() {
+//   clearInterval(autoSlideInterval);
+//   currentIndex = (currentIndex + 1) % carouselItems.length;
+//   showSlide(currentIndex, (currentIndex + 1) % carouselItems.length, (currentIndex + 2) % carouselItems.length);
+//   startAutoSlide();
+// }
+
+// function autoSlide() {
+//   currentIndex = (currentIndex + 1) % carouselItems.length;
+//   showSlide(currentIndex, (currentIndex + 1) % carouselItems.length, (currentIndex + 2) % carouselItems.length);
+//   console.log("hey");
+// }
+
+// function startAutoSlide() {
+//   autoSlideInterval = setInterval(autoSlide, 4000);
+//   console.log("hey2");
+// }
+
+// galleryContainerLeftArrow.addEventListener("click", prevSlide);
+// galleryContainerRightArrow.addEventListener("click", nextSlide);
+
+// startAutoSlide();
+//project end
+
+// project exp
+const carouselItems = document.querySelectorAll(".card"); // Assuming you have a class 'card' for your carousel items
+const galleryContainerLeftArrow = document.querySelector(".leftArrow");
+const galleryContainerRightArrow = document.querySelector(".rightArrow");
+let intervalId;
+let currentSlides = [0, 1, 2];
+const gallery = document.querySelector(".gallery");
+
+function incrementArray(array, limit) {
+  limit = limit + 1;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < limit) {
+      array[i] = (array[i] + 1) % limit;
+    } else {
+      array[i] = 0;
+    }
+  }
+}
+
+function decrementArray(array, limit) {
+  for (let i = array.length - 1; i >= 0; i--) {
+    if (array[i] > 0) {
+      array[i] = (array[i] - 1) % limit;
+    } else if (array[i] === 0) {
+      array[i] = limit;
+    } else {
+      array[i] = ((array[i] - 1) % limit) * -1;
+    }
+  }
+}
+
+// function showSlide(slideNum, slides) {
+//   slides[slideNum].style.backgroundImage = `url(images/P${slideNum + 1}.jpg)`;
+//   slides[slideNum].classList.add("active");
+// }
+
+// function hideSlide(slideNum, slides) {
+//   slides[slideNum].classList.remove("active");
+// }
+function showSlide(currentSlideArray) {
+  currentSlideArray.forEach((slide) => {
+    const card = document.createElement("div");
+    card.className = `card card${slide + 1}`;
+    card.style.backgroundImage = `url(images/P${slide + 1}.jpg)`;
+    const cardContent = document.createElement("div");
+    cardContent.className = "cardContent";
+
+    const title = document.createElement("h3");
+    title.className = "title";
+    title.textContent = `Work name${slide + 1}`;
+
+    const description = document.createElement("span");
+    description.className = "description";
+    description.textContent = `Web Design${slide + 1}`;
+
+    cardContent.appendChild(title);
+    cardContent.appendChild(description);
+    card.appendChild(cardContent);
+    gallery.appendChild(card);
   });
 }
 
-//project end
+function hideSlide() {
+  gallery.textContent = "";
+}
+
+function displaySlides(currentSlideArray) {
+  hideSlide();
+  incrementArray(currentSlideArray, 5);
+  console.log(currentSlideArray);
+
+  // slides.forEach((slide, index) => {
+  //   hideSlide(index, slides);
+  // });
+  // currentSlides.forEach((itemIndex) => {
+  //   showSlide(itemIndex, slides);
+  // });
+  showSlide(currentSlideArray);
+}
+function startAutoShow() {
+  intervalId = setInterval(() => displaySlides(currentSlides), 2000);
+}
+
+startAutoShow();
+
+// gallery elements
+// const works = [
+//   { title: "Work name1", description: "Web Design1" },
+//   { title: "Work name2", description: "Web Design2" },
+//   { title: "Work name3", description: "Web Design3" },
+//   { title: "Work name4", description: "Web Design4" },
+//   { title: "Work name5", description: "Web Design5" },
+//   { title: "Work name6", description: "Web Design6" },
+// ];
+// let galleryContainer = document.querySelector(".galleryContainer");
+// let gallery = document.querySelector(".gallery");
+
+// function displayTheCards(){
+//   galleryContainer.style.textContent = '';
+//   works.forEach((work, index) => {
+//     for(let j = 0;j<currentSlides.length;j++) {
+//       if(index === currentSlides[j]) {
+//         const card = document.createElement("div");
+//       card.className = `card card${index + 1}`;
+
+//       const cardContent = document.createElement("div");
+//       cardContent.className = "cardContent";
+
+//       const title = document.createElement("h3");
+//       title.className = "title";
+//       title.textContent = work.title;
+
+//       const description = document.createElement("span");
+//       description.className = "description";
+//       description.textContent = work.description;
+
+//       cardContent.appendChild(title);
+//       cardContent.appendChild(description);
+//       card.appendChild(cardContent);
+//       gallery.appendChild(card);
+//       }
+//     }
+
+//   });
+//   galleryContainer.appendChild(gallery);
+// }
+// let intervalId2;
+// function startAutoShow2() {
+//   intervalId2 = setInterval(displayTheCards, 10000);
+// }
+
+// startAutoShow2();
+// // gallery elements end
+// // work on gpt's shift function
+// // project exp end

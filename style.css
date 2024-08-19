@@ -265,9 +265,9 @@
 }
 
 /* for animation */
-.gallery .card:not(.active) {
+/* .gallery .card:not(.active) {
   display: none;
-}
+} */
 /* for animation end */
 /* Project end */
 
