@@ -205,14 +205,6 @@ function decrementArray(array, limit) {
   }
 }
 
-// function showSlide(slideNum, slides) {
-//   slides[slideNum].style.backgroundImage = `url(images/P${slideNum + 1}.jpg)`;
-//   slides[slideNum].classList.add("active");
-// }
-
-// function hideSlide(slideNum, slides) {
-//   slides[slideNum].classList.remove("active");
-// }
 function showSlide(currentSlideArray) {
   currentSlideArray.forEach((slide) => {
     const card = document.createElement("div");
@@ -243,14 +235,6 @@ function hideSlide() {
 function displaySlides(currentSlideArray) {
   hideSlide();
   incrementArray(currentSlideArray, 5);
-  console.log(currentSlideArray);
-
-  // slides.forEach((slide, index) => {
-  //   hideSlide(index, slides);
-  // });
-  // currentSlides.forEach((itemIndex) => {
-  //   showSlide(itemIndex, slides);
-  // });
   showSlide(currentSlideArray);
 }
 function startAutoShow() {
@@ -258,54 +242,3 @@ function startAutoShow() {
 }
 
 startAutoShow();
-
-// gallery elements
-// const works = [
-//   { title: "Work name1", description: "Web Design1" },
-//   { title: "Work name2", description: "Web Design2" },
-//   { title: "Work name3", description: "Web Design3" },
-//   { title: "Work name4", description: "Web Design4" },
-//   { title: "Work name5", description: "Web Design5" },
-//   { title: "Work name6", description: "Web Design6" },
-// ];
-// let galleryContainer = document.querySelector(".galleryContainer");
-// let gallery = document.querySelector(".gallery");
-
-// function displayTheCards(){
-//   galleryContainer.style.textContent = '';
-//   works.forEach((work, index) => {
-//     for(let j = 0;j<currentSlides.length;j++) {
-//       if(index === currentSlides[j]) {
-//         const card = document.createElement("div");
-//       card.className = `card card${index + 1}`;
-
-//       const cardContent = document.createElement("div");
-//       cardContent.className = "cardContent";
-
-//       const title = document.createElement("h3");
-//       title.className = "title";
-//       title.textContent = work.title;
-
-//       const description = document.createElement("span");
-//       description.className = "description";
-//       description.textContent = work.description;
-
-//       cardContent.appendChild(title);
-//       cardContent.appendChild(description);
-//       card.appendChild(cardContent);
-//       gallery.appendChild(card);
-//       }
-//     }
-
-//   });
-//   galleryContainer.appendChild(gallery);
-// }
-// let intervalId2;
-// function startAutoShow2() {
-//   intervalId2 = setInterval(displayTheCards, 10000);
-// }
-
-// startAutoShow2();
-// // gallery elements end
-// // work on gpt's shift function
-// // project exp end
